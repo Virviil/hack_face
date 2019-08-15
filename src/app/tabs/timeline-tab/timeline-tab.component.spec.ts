@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { TimelineTabPage } from './timeline-tab.page';
+import { TimelineTabComponent } from './timeline-tab.component';
 
 describe('TimelineTabPage', () => {
-  let component: TimelineTabPage;
-  let fixture: ComponentFixture<TimelineTabPage>;
+  let component: TimelineTabComponent;
+  let fixture: ComponentFixture<TimelineTabComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [TimelineTabPage],
+      declarations: [TimelineTabComponent],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TimelineTabPage);
+    fixture = TestBed.createComponent(TimelineTabComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
