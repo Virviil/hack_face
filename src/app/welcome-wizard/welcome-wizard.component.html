@@ -1,0 +1,47 @@
+<ion-app>
+    <ion-header>
+        <ion-toolbar>
+            <ion-title>
+                Ole Hadash Assistant
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-card class="welcome-card">
+            <ion-card-header>
+                <ion-card-title>Welcome to Ole Hadash Assistant</ion-card-title>
+                <ion-card-subtitle>Please provide some data so we can tell you future ;)</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+                <form [formGroup]="welcomeWizard" (ngSubmit)="submitWelcomeWizard(welcomeWizard.value)">
+                    <ion-item>
+                        <ion-label>Age</ion-label>
+                        <ion-input type="number" formControlName="age"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Gender</ion-label>
+                        <ion-select formControlName="gender">
+                            <ion-select-option *ngFor="let gender of genders"
+                                               [value]="gender">{{gender}}</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Marital Status</ion-label>
+                        <ion-select formControlName="marital_status">
+                            <ion-select-option *ngFor="let maritalStatus of maritalStatuses"
+                                               [value]="maritalStatus">{{maritalStatus}}</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label>Number of children</ion-label>
+                        <ion-input type="number" formControlName="number_of_children"></ion-input>
+                    </ion-item>
+
+                    <ion-button type="submit">Submit</ion-button>
+                </form>
+            </ion-card-content>
+        </ion-card>
+
+    </ion-content>
+</ion-app>
