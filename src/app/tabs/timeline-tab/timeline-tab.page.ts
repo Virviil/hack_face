@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  templateUrl: 'timeline-tab.page.html',
+  styleUrls: ['timeline-tab.page.scss']
 })
-export class Tab3Page {
+export class TimelineTabPage {
   items = [
     {
       title: 'Courgette daikon',

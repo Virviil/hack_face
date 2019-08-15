@@ -12,19 +12,9 @@ export class TimelineComponent {
 
 @Component({
   selector: 'timeline-item',
-  template: '<ng-content></ng-content>',
-  styleUrls: ['timeline.scss']
+  templateUrl: 'timeline-item.html',
+  styleUrls: ['timeline-item.scss']
 })
 export class TimelineItemComponent{
-  constructor() { }
-}
-
-@Component({
-  selector:'timeline-time',
-  template: '<span>{{time.subtitle}}</span> <span>{{time.title}}</span>',
-  styleUrls: ['timeline.scss']
-})
-export class TimelineTimeComponent{
-  @Input('time') time: { title?: string, subtitle?: string} = {};
   constructor() { }
 }

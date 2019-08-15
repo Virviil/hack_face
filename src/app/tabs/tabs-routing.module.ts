@@ -13,7 +13,7 @@ const routes: Routes = [
             },
             {
                 path: 'timeline',
-                loadChildren: () => import('./tab3/tab3.module').then(m => m.Tab3PageModule)
+                loadChildren: () => import('./timeline-tab/timeline-tab.module').then(m => m.TimelineTabModule)
             }
         ]
     }
