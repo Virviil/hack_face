@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            My Timeline
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <timeline>
+        <timeline-item *ngFor="let item of items">
+            <h2>2017</h2>
+            <h4>{{item.title}}</h4>
+            <p>{{item.content}}</p>
+        </timeline-item>
+    </timeline>
+</ion-content>
