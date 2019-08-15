@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import {WelcomeWizardService} from './welcome-wizard.service';
 
 @Component({
     selector: 'app-tab1',
@@ -28,7 +29,7 @@ export class WelcomeWizardComponent implements OnInit {
     ];
 
     constructor(private fb: FormBuilder,
-                private http: HttpClient,
+                private service: WelcomeWizardService,
                 private router: Router) {
     }
 
@@ -36,9 +37,9 @@ export class WelcomeWizardComponent implements OnInit {
     }
 
     submitWelcomeWizard(value: any) {
-        // this.http.post('api/actions/init', value)
-        //     .subscribe((res) => {
-        this.router.navigate(['tabs/current-status-tab']);
-        // });
+        this.service.makeInitAction(value)
+            .subscribe(res => {
+                this.router.navigate(['tabs/current-status-tab']);
+            });
     }
 }

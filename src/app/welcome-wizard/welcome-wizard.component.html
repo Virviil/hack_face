@@ -16,6 +16,10 @@
             <ion-card-content>
                 <form [formGroup]="welcomeWizard" (ngSubmit)="submitWelcomeWizard(welcomeWizard.value)">
                     <ion-item>
+                        <ion-label>Date of Aliah</ion-label>
+                        <ion-datetime displayFormat="DD-MM-YYYY" formControlName="aliah_date"></ion-datetime>
+                    </ion-item>
+                    <ion-item>
                         <ion-label>Age</ion-label>
                         <ion-input type="number" formControlName="age"></ion-input>
                     </ion-item>
