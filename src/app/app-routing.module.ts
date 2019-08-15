@@ -4,14 +4,14 @@ import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 const routes: Routes = [
     {
         path: '',
-        loadChildren: () => import('./tabs/tabs-component.module').then(m => m.TabsComponentModule)
+        loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsModule)
     },
     {
         path: 'welcome',
-        loadChildren: () => import('./welcome-wizard/welcome-wizard-component.module').then(m => m.WelcomeWizardComponentModule)
+        loadChildren: () => import('./welcome-wizard/welcome-wizard.module').then(m => m.WelcomeWizardModule)
     },
 
-    {path: '', redirectTo: 'welcome', pathMatch: 'full'}
+    {path: '', redirectTo: 'welcome', pathMatch: 'prefix'}
 ];
 
 @NgModule({

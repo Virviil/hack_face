@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {WelcomeWizardComponent} from './welcome-wizard.component';
+import {WelcomeWizardService} from './welcome-wizard.service';
 
 @NgModule({
     imports: [
@@ -14,7 +15,12 @@ import {WelcomeWizardComponent} from './welcome-wizard.component';
         FormsModule,
         RouterModule.forChild([{path: '', component: WelcomeWizardComponent}])
     ],
-    declarations: [WelcomeWizardComponent]
+    declarations: [
+        WelcomeWizardComponent
+    ],
+    providers: [
+        WelcomeWizardService
+    ]
 })
-export class WelcomeWizardComponentModule {
+export class WelcomeWizardModule {
 }
