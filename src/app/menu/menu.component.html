@@ -1,4 +1,4 @@
-<ion-menu side="start" contentId="main">
+<ion-menu side="start" contentId="main" #menu>
     <ion-header>
         <ion-toolbar>
             <ion-title>O H A</ion-title>
@@ -6,8 +6,8 @@
     </ion-header>
     <ion-content>
         <ion-list>
-            <ion-item [routerLink]="'tabs/current-status-tab'">Main</ion-item>
-            <ion-item [routerLink]="'wizards/driver-wizard'">Driver Information</ion-item>
+            <ion-item [routerLink]="'tabs/current-status-tab'" (click)="menu.close()">Main</ion-item>
+            <ion-item [routerLink]="'wizards/driver-wizard'" (click)="menu.close()">Driver Information</ion-item>
         </ion-list>
     </ion-content>
 </ion-menu>

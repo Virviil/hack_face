@@ -6,6 +6,8 @@
             </ion-title>
         </ion-toolbar>
     </ion-header>
+    <ion-progress-bar *ngIf="service.isLoading" type="indeterminate"></ion-progress-bar>
+    <ion-backdrop *ngIf="service.isLoading"></ion-backdrop>
 
     <ion-content>
         <ion-card class="welcome-card">

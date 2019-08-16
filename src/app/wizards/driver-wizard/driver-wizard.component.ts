@@ -17,7 +17,7 @@ export class DriverWizardComponent implements OnInit {
     }
 
     submitDriverLicence(value: boolean) {
-        this.http.post('api/actions/driver_license', {
+        this.http.post('api/actions/driving_license', {
             user_id: localStorage.getItem('user_id'),
             more_then_5_years: value
         }).subscribe(() => {
