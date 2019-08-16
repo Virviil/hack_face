@@ -1,0 +1,48 @@
+<ion-app>
+    <ion-header>
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+            <ion-title>
+                Ole Hadash Assistant
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <ion-card class="welcome-card">
+            <ion-card-header>
+                <ion-card-title>Driver Information</ion-card-title>
+                <ion-card-subtitle>We would like to inform you about some driver things, but we don't know much about
+                    you yet ;(
+                </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+                <ion-item>
+                    <ion-label>Do you have Driver Licence?</ion-label>
+                    <ion-checkbox #driverLicenceCheckbox></ion-checkbox>
+                </ion-item>
+                <ion-item [hidden]="!driverLicenceCheckbox.checked">
+                    <ion-radio-group #radioGroup>
+                        <ion-label>What is your experience as a driver?</ion-label>
+
+                        <ion-item>
+                            <ion-label>Less than 5 years</ion-label>
+                            <ion-radio slot="start" [value]="false" checked></ion-radio>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>More than 5 years</ion-label>
+                            <ion-radio slot="start" [value]="true"></ion-radio>
+                        </ion-item>
+                    </ion-radio-group>
+                </ion-item>
+
+                <ion-button *ngIf="driverLicenceCheckbox.value" type="submit"
+                            (click)="submitDriverLicence(radioGroup.value)">Submit
+                </ion-button>
+            </ion-card-content>
+        </ion-card>
+
+    </ion-content>
+</ion-app>

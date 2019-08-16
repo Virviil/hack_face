@@ -12,41 +12,6 @@ export class CurrentStatusTabResolver implements Resolve<any> {
     }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
-        return of({
-            rights: [
-                {
-                    name: 'Right',
-                    description: 'You have right for...',
-                    end_date: new Date()
-                },
-                {
-                    name: 'Another Right',
-                    description: 'And one more',
-                    end_date: new Date()
-                },
-                {
-                    name: 'Last thing',
-                    description: 'but not least',
-                    end_date: new Date()
-                }
-            ],
-            suggestions: [
-                {
-                    name: 'Right',
-                    description: 'You have right for...',
-                    end_date: new Date()
-                },
-                {
-                    name: 'Another Right',
-                    description: 'And one more',
-                    end_date: new Date()
-                },
-                {
-                    name: 'Last thing',
-                    description: 'but not least',
-                    end_date: new Date()
-                }
-            ]
-        });
+        return this.http.get('/api/entities', {params: {user_id: localStorage.getItem('user_id')}});
     }
 }
