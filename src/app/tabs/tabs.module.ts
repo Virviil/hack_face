@@ -7,6 +7,7 @@ import {TabsPageRoutingModule} from './tabs-routing.module';
 
 import {TabsComponent} from './tabs.component';
 import {CurrentStatusTabResolver} from './current-status-tab/current-status-tab.resolver';
+import {RightTabResolver} from './right-tab/right-tab.resolver';
 
 @NgModule({
     imports: [
@@ -16,7 +17,10 @@ import {CurrentStatusTabResolver} from './current-status-tab/current-status-tab.
         TabsPageRoutingModule
     ],
     declarations: [TabsComponent],
-    providers: [CurrentStatusTabResolver]
+    providers: [
+        CurrentStatusTabResolver,
+        RightTabResolver
+    ]
 })
 export class TabsModule {
 }

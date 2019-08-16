@@ -20,8 +20,8 @@ export class WelcomeWizardComponent implements OnInit {
     });
 
     readonly genders: string[] = [
-        'Male',
-        'Female'
+        'male',
+        'female'
     ];
     readonly maritalStatuses: string[] = [
         'Married',

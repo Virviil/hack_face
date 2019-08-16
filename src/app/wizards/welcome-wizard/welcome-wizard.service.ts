@@ -19,11 +19,11 @@ export class WelcomeWizardService {
         return this.http.post('api/actions/init', param)
             .pipe(tap(res => {
                     this.isLoading = false;
-                    localStorage.setItem('user_id', res.user_id);
+                    localStorage.setItem('user_id', (res as any).user_id);
                 }),
                 catchError(() => {
                     this.isLoading = false;
-                    return null;
+                    return of(null);
                 }));
     }
 }

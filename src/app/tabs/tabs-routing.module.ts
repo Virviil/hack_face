@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {TabsComponent} from './tabs.component';
 import {CurrentStatusTabResolver} from './current-status-tab/current-status-tab.resolver';
 import {TimelineTabResolver} from './timeline-tab/timeline-tab.resolver';
+import {RightTabResolver} from './right-tab/right-tab.resolver';
 
 const routes: Routes = [
     {
@@ -18,6 +19,11 @@ const routes: Routes = [
                 path: 'timeline',
                 loadChildren: () => import('./timeline-tab/timeline-tab.module').then(m => m.TimelineTabModule),
                 resolve: {data: TimelineTabResolver}
+            },
+            {
+                path: 'right/:id',
+                loadChildren: () => import('./right-tab/right-tab.module').then(m => m.RightTabModule),
+                resolve: {data: RightTabResolver}
             }
         ]
     }

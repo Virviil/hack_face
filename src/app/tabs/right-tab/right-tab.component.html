@@ -1,0 +1,27 @@
+<ion-app>
+    <ion-header>
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+            <ion-title>
+                Right
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-card>
+            <ion-card-header>
+                <ion-card-subtitle>{{activatedRoute.snapshot.data.data.organization.name}}</ion-card-subtitle>
+                <ion-card-title>{{activatedRoute.snapshot.data.data.name}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                {{activatedRoute.snapshot.data.data.description}}
+                <br>
+                <br>
+                {{activatedRoute.snapshot.data.data.start_date | date: 'mediumDate'}}
+                - {{activatedRoute.snapshot.data.data.end_date | date: 'mediumDate'}}
+            </ion-card-content>
+        </ion-card>
+    </ion-content>
+</ion-app>

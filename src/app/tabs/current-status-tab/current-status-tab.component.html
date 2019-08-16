@@ -16,7 +16,8 @@
     </ion-header>
     <ion-content>
         <ion-list>
-            <ion-item *ngFor="let right of activatedRoute.snapshot.data.data.rights">
+            <ion-item *ngFor="let right of activatedRoute.snapshot.data.data.rights"
+                      [routerLink]="'/tabs/right/' + right.id">
                 <ion-item>
                     <ion-label>
                         <h2>{{right.name}}</h2>
