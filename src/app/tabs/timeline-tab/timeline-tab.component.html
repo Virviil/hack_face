@@ -1,9 +1,9 @@
 <ion-content>
     <timeline>
         <timeline-item *ngFor="let item of activatedRoute.snapshot.data.data">
-            <h2>2017</h2>
-            <h4>{{item.title}}</h4>
-            <p>{{item.content}}</p>
+            <h2>{{item.date}}</h2>
+            <h4>{{item.name}}</h4>
+            <p>{{item.description}}</p>
         </timeline-item>
     </timeline>
 </ion-content>
