@@ -36,12 +36,9 @@ export class CurrentStatusTabComponent implements OnInit {
         console.log('rightsName');
         const popover = await this.popoverController.create({
             component: RightTabComponent,
-            componentProps: {rightName: rightName}
+            componentProps: {rights: rightName}
         });
 
         return await popover.present();
-    }
-
-
     }
 }
